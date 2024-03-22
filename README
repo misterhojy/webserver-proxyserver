@@ -1,0 +1,60 @@
+Part A:
+
+In this part of the assignment, you will learn the basics of socket programming for TCP
+connections in Python: how to create a socket, bind it to a specific address and port, as well as
+send and receive a HTTP packet. You will also learn some basics of HTTP header format.
+Develop a web server that handles one HTTP request at a time. Your web server should be able
+to (a) accept and parse the HTTP request, get the requested file from the server’s file system, (b)
+create an HTTP response message consisting of the requested file preceded by header lines, and
+then (c) send the response directly to the client. (d) If the requested file is not present in the
+server, the server should send an HTTP “404 Not Found” message back to the client.
+
+Running Server:
+- Go in the directory where web server code is in
+- run code or through CML: python3 webserver.py
+- or exact path: /usr/local/bin/python3 /Users/hojatjaffary/Documents/CSE310/jaffary-hojat-assignment1/webserver.py
+
+- On search engine: localhost:12000/HelloWorld.html
+- make sure file in directory, not in directory you get 404
+
+Libraries
+- os library 
+    - to get directory and see if files are in the path
+
+- socket library
+    - to create sockets for the server and use socket programming
+
+
+Part B:
+
+Your task is to develop a small web proxy server which is able to cache web pages. It is a very
+simple proxy server which only understands simple GET requests, but is able to handle all kinds
+of objects - not just HTML pages, but also images.
+
+Websites That Can Be Used To Test:
+http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html
+http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html
+http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html
+http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file5.html
+    - DONT WORRY ABOUT EMBEDDED IMAGES   
+www.google.com
+
+Running Server:
+- Go in the directory where web server code is in
+- run code or through CML: python3 proxyserver.py
+- or exact path: /usr/local/bin/python3 /Users/hojatjaffary/Documents/CSE310/jaffary-hojat-assignment1/proxyserver.py
+
+- On search engine: localhost:8080/{WEBSITE URL FROM ABOVE}
+
+TESTING:
+- Stay on the same tab and change the localhost:8080/{WEBSITE URL FROM ABOVE} for different URLS
+
+Libraries:
+- Signal
+    - Handle getting the interupt signal using ctrl + c to end the proxy
+- Sys
+    - end the program if the signal is caught
+- Socket
+    - to create sockets for the server and use socket programming
+- hashlib
+    - to hash the request for a valid page name
